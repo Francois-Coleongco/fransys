@@ -1,9 +1,8 @@
-import { FaGithub, FaRust, FaServer, FaFile, FaLinkedin, FaEnvelope, FaNetworkWired, FaShieldAlt } from "react-icons/fa";
+import { FaGithub, FaRust, FaServer, FaLinkedin, FaEnvelope, FaNetworkWired, FaShieldAlt } from "react-icons/fa";
 import { SiGo, SiCplusplus, SiSqlite, SiCmake, SiTauri, SiJavascript, SiReact, SiElasticsearch, SiNodedotjs } from "react-icons/si";
 import "./globals.css";
 import Link from "next/link";
 import { FaImage, FaLock } from "react-icons/fa6";
-import { FcDataEncryption } from "react-icons/fc";
 
 const projects = [
 	{
