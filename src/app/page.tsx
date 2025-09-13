@@ -1,32 +1,34 @@
-import { FaGithub, FaRust, FaServer, FaLinkedin, FaEnvelope } from "react-icons/fa";
-import { SiGo, SiCplusplus } from "react-icons/si";
+import { FaGithub, FaRust, FaServer, FaFile, FaLinkedin, FaEnvelope, FaNetworkWired, FaShieldAlt } from "react-icons/fa";
+import { SiGo, SiCplusplus, SiSqlite, SiCmake, SiTauri, SiJavascript, SiReact, SiElasticsearch, SiNodedotjs } from "react-icons/si";
 import "./globals.css";
 import Link from "next/link";
+import { FaImage, FaLock } from "react-icons/fa6";
+import { FcDataEncryption } from "react-icons/fc";
 
 const projects = [
 	{
 		name: "Multithreaded Encrypted File Server/Client",
 		description: "Networking, concurrency, encryption in C++",
 		link: "YOUR_GITHUB_LINK_1",
-		icons: [<SiCplusplus size={20} />, <FaServer size={20} />],
+		icons: [SiCplusplus, FaServer, SiSqlite, FaLock, SiCmake],
 	},
 	{
 		name: "Encrypted Steganography Suite",
 		description: "Cryptography & image processing in Rust",
 		link: "YOUR_GITHUB_LINK_2",
-		icons: [<FaRust size={20} />],
+		icons: [FaRust, FaLock, FaImage, SiTauri, SiJavascript, SiReact],
 	},
 	{
 		name: "Server Agent Threat Detection",
 		description: "gRPC + Elasticsearch threat detection in Go",
 		link: "YOUR_GITHUB_LINK_3",
-		icons: [<SiGo size={20} />],
+		icons: [SiGo, FaNetworkWired, SiElasticsearch, SiNodedotjs, FaShieldAlt],
 	},
 	{
 		name: "Network Encryption Interface",
 		description: "C++ systems programming & encryption interface",
 		link: "YOUR_GITHUB_LINK_4",
-		icons: [<SiCplusplus size={20} />],
+		icons: [SiCplusplus, FaLock, FaNetworkWired],
 	},
 ];
 
@@ -66,9 +68,9 @@ export default function Home() {
 								<div className="flex justify-between items-center mt-4">
 									{/* Tech/Dev icons */}
 									<div className="flex items-center gap-2">
-										{proj.icons.map((icon, idx) => (
+										{proj.icons.map((Icon, idx) => (
 											<span key={idx} className="text-pipboyGreen">
-												{icon}
+												<Icon size={20} />
 											</span>
 										))}
 									</div>
