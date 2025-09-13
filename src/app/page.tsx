@@ -8,25 +8,25 @@ const projects = [
 	{
 		name: "Multithreaded Encrypted File Server/Client",
 		description: "Networking, concurrency, encryption in C++",
-		link: "YOUR_GITHUB_LINK_1",
+		link: "https://github.com/Francois-Coleongco/MEFSC",
 		icons: [SiCplusplus, FaServer, SiSqlite, FaLock, SiCmake],
 	},
 	{
 		name: "Encrypted Steganography Suite",
 		description: "Cryptography & image processing in Rust",
-		link: "YOUR_GITHUB_LINK_2",
+		link: "https://github.com/Francois-Coleongco/Steganography_Suite",
 		icons: [FaRust, FaLock, FaImage, SiTauri, SiJavascript, SiReact],
 	},
 	{
 		name: "Server Agent Threat Detection",
 		description: "gRPC + Elasticsearch threat detection in Go",
-		link: "YOUR_GITHUB_LINK_3",
+		link: "https://github.com/Francois-Coleongco/SATD",
 		icons: [SiGo, FaNetworkWired, SiElasticsearch, SiNodedotjs, FaShieldAlt],
 	},
 	{
 		name: "Network Encryption Interface",
 		description: "C++ systems programming & encryption interface",
-		link: "YOUR_GITHUB_LINK_4",
+		link: "https://github.com/Francois-Coleongco/Network-Encryption-Interface",
 		icons: [SiCplusplus, FaLock, FaNetworkWired],
 	},
 ];
