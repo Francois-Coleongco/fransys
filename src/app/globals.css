@@ -1,9 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --pipboy-bg: #0f0f0f;
+  --pipboy-bg: #171717;
   --pipboy-foreground: #8fc13e;
-  --panel-bg: #1f1f1f;
+  --dark-bg: #0a0f0a;       /* main background */
+  --highlight-green: #8fc13e;       /* borders & accents */
+  --text-green: #b6f07a;            /* text slightly brighter */
+}
+
+.project-panel {
+  background-color: #171717;      /* dark green panel */
+  backdrop-filter: blur(4px);     /* HUD blur effect */
 }
 
 body {
@@ -21,53 +28,112 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5rem;
 }
 
-/* Scanline effect */
-.scanline {
-  background-image: repeating-linear-gradient(
-    rgba(143, 193, 62, 0.05) 0px,
-    rgba(143, 193, 62, 0.05) 2px,
-    transparent 2px,
-    transparent 4px
-  );
+
+.pipboy-flicker {
+  color: var(--text-green);
+  animation: flicker-text 8s infinite;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-/* Pip-Boy scanline animation */
-@keyframes scan {
-  0% { background-position: 0 0; }
-  50% { background-position: 0 2px; }
-  100% { background-position: 0 4px; }
-}
-
-/* Flicker animation */
-@keyframes flicker {
+@keyframes flicker-text {
   0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
     opacity: 1;
+    text-shadow: 0 0 2px #8fc13e, 0 0 5px #8fc13e;
   }
   20%, 22%, 24%, 55% {
-    opacity: 0.8;
+    opacity: 0.6;
+    text-shadow: none;
   }
 }
 
-.scanline {
-  background-image: repeating-linear-gradient(
-    rgba(143, 193, 62, 0.08) 0px,
-    rgba(143, 193, 62, 0.08) 2px,
-    transparent 2px,
-    transparent 4px
+
+.fallout-scanlines {
+  position: relative;
+  background-color: #030503; /* dark background for contrast */
+  overflow: hidden;
+}
+
+/* Hazy ambient glow behind everything */
+.fallout-scanlines::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0; /* behind panels and scanline */
+
+  /* Hazy glow */
+  background-image: 
+    radial-gradient(rgba(143, 193, 62, 0.06) 0%, transparent 70%), 
+    radial-gradient(rgba(143, 193, 62, 0.15) 1px, transparent 1px), 
+    radial-gradient(rgba(143, 193, 62, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 2px 2px, 3px 3px;
+
+  animation: glow-flicker 0.5s infinite alternate, interference 0.5s steps(2) infinite;
+}
+
+/* Subtle moving scanline */
+.fallout-scanlines::before {
+  content: "";
+  position: absolute;
+  top: -10%; /* start above the screen */
+  left: 0;
+  width: 100%;
+  height: 100%; /* covers the whole height for fading trail */
+  background: linear-gradient(
+    rgba(143, 193, 62, 0.0) 0%,   /* fully transparent at top */
+    rgba(143, 193, 62, 0.05) 2%,   /* brightest at line */
+    rgba(143, 193, 62, 0.0) 5%    /* fades out below */
   );
-  animation: scan 0.5s linear infinite, flicker 8s infinite;
+  pointer-events: none;
+  z-index: 1;
+
+  animation: scanline-sweep 8s linear infinite;
+}
+
+/* Sweep animation top → bottom */
+@keyframes scanline-sweep {
+  0%   { top: -10%; }
+  100% { top: 100%; }
+}
+
+/* Glow flicker animation */
+@keyframes glow-flicker {
+  0%   { opacity: 0.05; }
+  25%  { opacity: 0.1; }
+  50%  { opacity: 0.07; }
+  75%  { opacity: 0.12; }
+  100% { opacity: 0.10; }
+}
+
+/* Scanline downward movement */
+@keyframes scanline-move {
+  0%   { top: -2px; }
+  100% { top: 100%; }
+}
+
+/* Tiny vertical flicker on scanline */
+@keyframes scanline-flicker {
+  0%, 100% { transform: translateY(0); opacity: 0.25; }
+  25% { transform: translateY(1px); opacity: 0.28; }
+  50% { transform: translateY(0px); opacity: 0.22; }
+  75% { transform: translateY(-1px); opacity: 0.26; }
+}
+
+/* Pixel interference */
+@keyframes interference {
+  0%   { background-position: 0 0, 0 0, 0 0; }
+  50%  { background-position: 1px 1px, -1px -1px, 0 1px; }
+  100% { background-position: 0 0, 0 0, 0 0; }
+}
+
+
+.flicker-in {
+  animation: flicker-in 0.8s ease-out forwards;
+}
+
+@keyframes flicker-in {
+  0%   { opacity: 0; filter: brightness(0); }
+  25%  { opacity: 0.5; filter: brightness(1.5); }
+  50%  { opacity: 0.8; filter: brightness(0.9); }
+  75%  { opacity: 1; filter: brightness(1.2); }
+  100% { opacity: 1; filter: brightness(1); }
 }
