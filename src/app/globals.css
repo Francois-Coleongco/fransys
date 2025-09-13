@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+:root {
+  --pipboy-bg: #0f0f0f;
+  --pipboy-foreground: #8fc13e;
+  --panel-bg: #1f1f1f;
+}
+
+body {
+  background-color: var(--pipboy-bg);
+  color: var(--pipboy-foreground);
+  font-family: 'VT323', monospace;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Optional: headings slightly tighter */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+/* Scanline effect */
+.scanline {
+  background-image: repeating-linear-gradient(
+    rgba(143, 193, 62, 0.05) 0px,
+    rgba(143, 193, 62, 0.05) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* Pip-Boy scanline animation */
+@keyframes scan {
+  0% { background-position: 0 0; }
+  50% { background-position: 0 2px; }
+  100% { background-position: 0 4px; }
+}
+
+/* Flicker animation */
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+  }
+  20%, 22%, 24%, 55% {
+    opacity: 0.8;
+  }
+}
+
+.scanline {
+  background-image: repeating-linear-gradient(
+    rgba(143, 193, 62, 0.08) 0px,
+    rgba(143, 193, 62, 0.08) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  animation: scan 0.5s linear infinite, flicker 8s infinite;
+}
