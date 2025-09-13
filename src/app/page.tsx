@@ -1,4 +1,4 @@
-import { FaGithub, FaRust, FaCuttlefish, FaServer, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaRust, FaServer, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { SiGo, SiCplusplus } from "react-icons/si";
 import "./globals.css";
 import Link from "next/link";
