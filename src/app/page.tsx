@@ -41,7 +41,7 @@ export default function Home() {
 						Francois Coleongco
 					</h1>
 
-					<p style={{ color: 'var(--text-green)', opacity: 0.1 }}>We're all void pointers 💚</p>
+					<p style={{ color: 'var(--text-green)', opacity: 0.1 }}>We&apos;re all void pointers 💚</p>
 					<br />
 					<p className="text-xl font-mono leading-relaxed">
 						Undergraduate honors CS major at the University of Alberta.
