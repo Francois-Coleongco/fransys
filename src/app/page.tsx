@@ -100,21 +100,21 @@ export default function Home() {
 				{/* Right: links */}
 				<div className="flex gap-6">
 					<Link
-						href="https://github.com/YOUR_GITHUB"
+						href="https://github.com/Francois-Coleongco"
 						target="_blank"
 						className="flex items-center gap-1 text-pipboyGreen hover:text-white"
 					>
 						<FaGithub /> GitHub
 					</Link>
 					<Link
-						href="https://linkedin.com/in/YOUR_LINKEDIN"
+						href="https://www.linkedin.com/in/francois-coleongco"
 						target="_blank"
 						className="flex items-center gap-1 text-pipboyGreen hover:text-white"
 					>
 						<FaLinkedin /> LinkedIn
 					</Link>
 					<a
-						href="mailto:YOUR_EMAIL"
+						href="mailto:christien.coleongco@gmail.com"
 						className="flex items-center gap-1 text-pipboyGreen hover:text-white"
 					>
 						<FaEnvelope /> Email
