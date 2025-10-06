@@ -9,7 +9,6 @@ const ConwayCanvas: React.FC = () => {
 		if (!canvas) return;
 
 		const ctx = canvas.getContext('2d');
-		if (!ctx) return;
 
 		let width = (canvas.width = window.innerWidth);
 		let height = (canvas.height = window.innerHeight);
@@ -23,6 +22,7 @@ const ConwayCanvas: React.FC = () => {
 		);
 
 		function drawGrid() {
+			if (ctx === null) return;
 			ctx.clearRect(0, 0, width, height);
 			ctx.fillStyle = '#335c40';
 
