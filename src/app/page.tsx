@@ -4,10 +4,8 @@ import "./globals.css";
 import Link from "next/link";
 import { FaImage, FaLock } from "react-icons/fa6";
 import ConwayCanvas from "./conways";
-import { TbHttpConnect, TbHttpHead, TbHttpOptions, TbLoadBalancer } from "react-icons/tb";
-import { BsDistributeHorizontal } from "react-icons/bs";
-import { LuAlignVerticalDistributeCenter } from "react-icons/lu";
-import { MdHttp, MdHttps } from "react-icons/md";
+import { TbLoadBalancer } from "react-icons/tb";
+import { MdHttp } from "react-icons/md";
 
 
 const projects = [
@@ -80,11 +78,11 @@ export default function Home() {
 			<ConwayCanvas />
 			<main className="flex-grow text-pipboyGreen  p-6"> {/*fallout-scanlines*/}
 
-				<h2 className="text-center pipboy-flicker text-4xl mb-4">Hi, I'm Francois</h2>
+				<h2 className="text-center pipboy-flicker text-4xl mb-4">Hi, I&apos;m Francois</h2>
 
 				<div className="max-w-xl mx-auto text-center mt-4">
 					<p className="text-md font-mono leading-relaxed">
-						I’m an honors CS major at the University of Alberta, passionate about building high-performance systems, distributed infrastructure, and AI-driven solutions. I enjoy designing and contributing to complex features that make products more robust, scalable, and impactful.
+						I&apos;m an honors CS major at the University of Alberta, passionate about building high-performance systems, distributed infrastructure, and AI-driven solutions. I enjoy designing and contributing to complex features that make products more robust, scalable, and impactful.
 					</p>
 				</div>
 				<br />
