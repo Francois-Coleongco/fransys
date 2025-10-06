@@ -13,8 +13,10 @@
   backdrop-filter: blur(4px);     /* HUD blur effect */
 }
 
+
 body {
-  background-color: var(--pipboy-bg);
+  background-image: url('../../public/image.png');
+  background-size: cover;
   color: var(--pipboy-foreground);
   font-family: 'VT323', monospace;
   line-height: 1.6;
@@ -48,7 +50,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .fallout-scanlines {
   position: relative;
-  background-color: #030503; /* dark background for contrast */
   overflow: hidden;
 }
 
