@@ -133,7 +133,7 @@ export default function Home() {
 			>
 				<h2 className="pipboy-flicker text-4xl mb-4">CONTACT</h2>
 				<p className="text-[var(--text-green)] mb-6">
-					Want to get in touch? Shoot me an email or connect on GitHub.
+					Want to get in touch? Shoot me an email or connect on LinkedIn.
 				</p>
 				<div className="flex flex-col md:flex-row gap-4">
 					<a
