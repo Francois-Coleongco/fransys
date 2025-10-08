@@ -10,10 +10,10 @@ const ConwayCanvas: React.FC = () => {
 
 		const ctx = canvas.getContext('2d');
 
-		let width = (canvas.width = window.innerWidth);
-		let height = (canvas.height = window.innerHeight);
+		let width = (canvas.width = document.documentElement.scrollWidth);
+		let height = (canvas.height = document.documentElement.scrollHeight);
 
-		const cellSize = 6;
+		const cellSize = 12;
 		let cols = Math.floor(width / cellSize);
 		let rows = Math.floor(height / cellSize);
 
@@ -70,14 +70,14 @@ const ConwayCanvas: React.FC = () => {
 		const loop = () => {
 			updateGrid();
 			drawGrid();
-			setTimeout(loop, 500);
+			setTimeout(loop, 800);
 		};
 
 		loop();
 
 		const handleResize = () => {
-			width = canvas.width = window.innerWidth;
-			height = canvas.height = window.innerHeight;
+			width = (canvas.width = document.documentElement.scrollWidth);
+			height = (canvas.height = document.documentElement.scrollHeight);
 			cols = Math.floor(width / cellSize);
 			rows = Math.floor(height / cellSize);
 			grid = new Array(cols).fill(null).map(() =>
@@ -100,9 +100,9 @@ const ConwayCanvas: React.FC = () => {
 				top: 0,
 				left: 0,
 				zIndex: -10,
-				width: '100vw',
-				height: '100vh',
-				opacity: 0.15,
+				width: '100%',
+				height: '100%',
+				opacity: 0.25,
 				pointerEvents: 'none',
 				imageRendering: 'pixelated',
 			}}
