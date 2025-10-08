@@ -88,7 +88,7 @@ const ConwayCanvas: React.FC = () => {
 			cols = Math.floor(width / cellSize);
 			rows = Math.floor(height / cellSize);
 			grid = new Array(cols).fill(null).map(() =>
-				new Array(rows).fill(0).map(() => (Math.random() > 0.8 ? 1 : 0))
+				new Array(rows).fill(0).map(() => (Math.random() > 0.9 ? 1 : 0))
 			);
 		};
 
@@ -137,7 +137,7 @@ const ConwayCanvas: React.FC = () => {
 					<a href='https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life' className='underline'>conways game of life</a> {tooltip.message}
 					<br />
 					<br />
-					<p className="text-xs text-pipboyGreen opacity-50">(click again to close me)</p>
+					<p className="text-xs text-pipboyGreen animate-pulse">(click again to close me)</p>
 				</div>
 			)}
 			<canvas
@@ -150,6 +150,9 @@ const ConwayCanvas: React.FC = () => {
 					width: '100%',
 					height: '100%',
 					opacity: 0.25,
+
+					zIndex: 0,
+					// pointerEvents: 'none',
 					imageRendering: 'pixelated',
 				}}
 			/>

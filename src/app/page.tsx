@@ -1,5 +1,4 @@
 "use client"
-import Head from "next/head"
 import { FaGithub, FaRust, FaServer, FaLinkedin, FaEnvelope, FaNetworkWired, FaShieldAlt } from "react-icons/fa";
 import { SiGo, SiCplusplus, SiSqlite, SiCmake, SiTauri, SiJavascript, SiReact, SiElasticsearch, SiNodedotjs, SiPython, SiOllama, SiOpenai, SiFastapi } from "react-icons/si";
 import "./globals.css";
@@ -64,10 +63,8 @@ export default function Home() {
 
 			<div className="flex flex-col min-h-screen flicker-in">
 
-				<ConwayCanvas />
 				<nav className="opacity-75 border-b border-[var(--highlight-green)] px-6 py-3 flex justify-between items-center">
 
-					<img src="pfp.png" className="w-16 h-16" />
 					<a href="" className="text-[var(--pipboy-foreground)] font-mono text-xl tracking-widest flicker-in transform transition-transform duration-200 hover:scale-104">
 						Francois Coleongco
 					</a>
@@ -91,15 +88,15 @@ export default function Home() {
 				</nav >
 
 
-				<main className="flex-grow text-pipboyGreen p-6"> {/*fallout-scanlines*/}
+				<main className="flex-grow text-pipboyGreen p-6">
 
-					<h2 className="text-center pipboy-flicker text-4xl mb-4">Hi, I&apos;m Francois</h2>
+					<h2 className="text-center pipboy-flicker text-4xl mt-4 mb-4">Hi, I&apos;m Francois</h2>
 
 					<section
 						id="about"
 					>
 						<div className="max-w-xl mx-auto text-center mt-4 pt-16 pb-12 -mt-24">
-							<p className="text-md font-mono leading-relaxed">
+							<p className="text-md font-mono leading-relaxed" style={{ position: 'relative', zIndex: 1 }}>
 								I&apos;m an honors CS major at the <a href="https://www.ualberta.ca/en/index.html
 "className="underline">University of Alberta</a>, passionate about building high-performance systems, distributed infrastructure, and AI-driven solutions. I enjoy designing and contributing to complex features that make products more robust and scalable.
 							</p>
@@ -113,8 +110,8 @@ export default function Home() {
 
 						className="min-h-screen flex flex-col justify-center items-center text-center px-4 py-16 md:py-24"
 					>
-						<h2 className="pipboy-flicker text-4xl mb-4 pb-8">Projects</h2>
-						<section className="bg-panelBg/80 backdrop-blur-sm p-6">
+						<h2 className="pipboy-flicker text-4xl mb-4 pb-8" style={{ position: 'relative', zIndex: 1 }}>Projects</h2>
+						<section className="bg-panelBg/80 backdrop-blur-sm p-6" style={{ position: 'relative', zIndex: 1 }}>
 
 							<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 								{projects.map((proj) => (
@@ -150,21 +147,22 @@ export default function Home() {
 							</div>
 						</section >
 					</section>
-					<p className="text-center">Curious about the background? Click one of the squares!</p>
+					<p className="text-center animate-pulse" style={{ position: 'relative', zIndex: 1 }}>Curious about the background? Click one of the squares!</p>
 				</main >
 
 				<section
 					id="contact"
 					className="min-h-screen flex flex-col justify-center items-center text-center px-4 py-16 md:py-24"
 				>
-					<h2 className="pipboy-flicker text-4xl mb-4 pb-8">CONTACT</h2>
-					<p className="text-[var(--text-green)] mb-6  pb-4">
+					<h2 className="pipboy-flicker text-4xl mb-4 pb-8" style={{ position: 'relative', zIndex: 1 }}>CONTACT</h2>
+					<p className="text-[var(--text-green)] mb-6  pb-4" style={{ position: 'relative', zIndex: 1 }}>
 						Want to get in touch? Shoot me an email or connect on GitHub.
 					</p>
 					<div className="flex flex-col md:flex-row gap-4">
 						<a
 							href="mailto:christien.coleongco@gmail.com"
 							className="project-panel p-4 border border-[var(--highlight-green)] rounded-lg text-[var(--text-green)] hover:text-[var(--pipboy-foreground)] flicker-in transition text-center transform transition-transform duration-200 hover:scale-104"
+							style={{ position: 'relative', zIndex: 1 }}
 						>
 							Email Me
 						</a>
@@ -173,27 +171,28 @@ export default function Home() {
 							target="_blank"
 							rel="noopener noreferrer"
 							className="project-panel p-4 border border-[var(--highlight-green)] rounded-lg text-[var(--text-green)] hover:text-[var(--pipboy-foreground)] flicker-in transition text-center transform transition-transform duration-200 hover:scale-104"
+							style={{ position: 'relative', zIndex: 1 }}
 						>
 							LinkedIn
 						</a>
 					</div>
 				</section>
 
-				<p className="text-center">We&apos;re all void pointers 💚</p>
+				<p className="text-center" style={{ position: 'relative', zIndex: 1 }} >We&apos;re all void pointers 💚</p>
 				<br />
 
 
 				<footer className="bg-panelBg/90 scanline border-t-2 border-pipboyGreen py-6 px-6 flex flex-col md:flex-row justify-between items-center text-sm mt-0">
 					{/* Left: copyright or name */}
-					<div className="mb-4 md:mb-0 text-pipboyGreen font-mono">
+					<div className="mb-4 md:mb-0 text-pipboyGreen font-mono" style={{ position: 'relative', zIndex: 1 }} >
 						© {new Date().getFullYear()} Francois Coleongco
 					</div>
 					{/* Right: links */}
 					<div className="flex gap-6">
 						<Link
 							href="https://github.com/Francois-Coleongco"
-							target="_blank"
-							className="flex items-center gap-1 text-pipboyGreen hover:text-white transform transition-transform duration-200 hover:scale-104"
+							target="_blank" className="flex items-center gap-1 text-pipboyGreen hover:text-white transform transition-transform duration-200 hover:scale-104"
+							style={{ position: 'relative', zIndex: 1 }}
 						>
 							<FaGithub /> GitHub
 						</Link>
@@ -201,18 +200,22 @@ export default function Home() {
 							href="https://www.linkedin.com/in/francois-coleongco"
 							target="_blank"
 							className="flex items-center gap-1 text-pipboyGreen hover:text-white transform transition-transform duration-200 hover:scale-104"
+							style={{ position: 'relative', zIndex: 1 }}
 						>
 							<FaLinkedin /> LinkedIn
 						</Link>
-						<a
+						<Link
 							href="mailto:christien.coleongco@gmail.com"
 							className="flex items-center gap-1 text-pipboyGreen hover:text-white transform transition-transform duration-200 hover:scale-104"
+							style={{ position: 'relative', zIndex: 1 }}
 						>
 							<FaEnvelope /> Email
-						</a>
+						</Link>
 					</div>
 				</footer>
+				<ConwayCanvas />
 			</div >
+
 		</>
 	);
 }
