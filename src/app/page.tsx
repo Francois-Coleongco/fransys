@@ -19,17 +19,16 @@ const projects = [
 		icons: [SiGo, FaNetworkWired, SiElasticsearch, SiNodedotjs, FaShieldAlt],
 	},
 	{
-		name: "Speech-Driven AI Video Preprocessor",
-		description: "AI-powered video trimming for the lazy video editor",
-		link: "https://github.com/Francois-Coleongco/KeepItRolling",
-		icons: [SiPython, SiOllama, SiOpenai, SiFastapi],
-	},
-
-	{
 		name: "Multithreaded Encrypted File Server/Client",
 		description: "A terminal-based file storage server and client",
 		link: "https://github.com/Francois-Coleongco/MEFSC",
 		icons: [SiCplusplus, FaServer, SiSqlite, FaLock, SiCmake],
+	},
+	{
+		name: "HTTP Load Balancer",
+		description: "A hybrid scheduling HTTP load balancer",
+		link: "https://github.com/Francois-Coleongco/LoadBalancer",
+		icons: [SiGo, TbLoadBalancer, MdHttp],
 	},
 	{
 		name: "Encrypted Steganography Suite",
@@ -38,16 +37,16 @@ const projects = [
 		icons: [FaRust, FaLock, FaImage, SiTauri, SiJavascript, SiReact],
 	},
 	{
+		name: "Speech-Driven AI Video Preprocessor",
+		description: "AI-powered video trimming for the lazy video editor",
+		link: "https://github.com/Francois-Coleongco/KeepItRolling",
+		icons: [SiPython, SiOllama, SiOpenai, SiFastapi],
+	},
+	{
 		name: "Network Encryption Interface",
 		description: "C++ systems programming & encryption interface",
 		link: "https://github.com/Francois-Coleongco/Network-Encryption-Interface",
 		icons: [SiCplusplus, FaLock, FaNetworkWired],
-	},
-	{
-		name: "HTTP Load Balancer",
-		description: "A hybrid scheduling HTTP load balancer",
-		link: "https://github.com/Francois-Coleongco/LoadBalancer",
-		icons: [SiGo, TbLoadBalancer, MdHttp],
 	},
 
 ];
@@ -67,18 +66,17 @@ export default function Home() {
 
 				<ConwayCanvas />
 				<nav className="opacity-75 border-b border-[var(--highlight-green)] px-6 py-3 flex justify-between items-center">
+
+					<img src="pfp.png" className="w-16 h-16" />
 					<a href="" className="text-[var(--pipboy-foreground)] font-mono text-xl tracking-widest flicker-in transform transition-transform duration-200 hover:scale-104">
 						Francois Coleongco
 					</a>
 					<div className="hidden md:flex space-x-6 font-mono text-[var(--text-green)]">
-						<Link href="#about" className="hover:text-[var(--pipboy-foreground)] transform transition-transform duration-200 hover:scale-104">About</Link>
 						<Link href="#projects" className="hover:text-[var(--pipboy-foreground)] transform transition-transform duration-200 hover:scale-104">Projects</Link>
 						<Link href="#contact" className="hover:text-[var(--pipboy-foreground)] transform transition-transform duration-200 hover:scale-104">Contact</Link>
 					</div>
 
 					<div className={`md:hidden flex flex-col gap-4 mt-2 ${menuOpen ? "flex" : "hidden"}`}>
-						<a href="/" className="hover:text-[var(--pipboy-foreground)] flicker-in transition transform transition-transform duration-200 hover:scale-104">home</a>
-						<a href="#about" className="hover:text-[var(--pipboy-foreground)] flicker-in transition transform transition-transform duration-200 hover:scale-104">about</a>
 						<a href="#projects" className="hover:text-[var(--pipboy-foreground)] flicker-in transition transform transition-transform duration-200 hover:scale-104">projects</a>
 						<a href="#contact" className="hover:text-[var(--pipboy-foreground)] flicker-in transition transform transition-transform duration-200 hover:scale-104">contact</a>
 					</div>
@@ -102,7 +100,8 @@ export default function Home() {
 					>
 						<div className="max-w-xl mx-auto text-center mt-4 pt-16 pb-12 -mt-24">
 							<p className="text-md font-mono leading-relaxed">
-								I&apos;m an honors CS major at the University of Alberta, passionate about building high-performance systems, distributed infrastructure, and AI-driven solutions. I enjoy designing and contributing to complex features that make products more robust, scalable, and impactful.
+								I&apos;m an honors CS major at the <a href="https://www.ualberta.ca/en/index.html
+"className="underline">University of Alberta</a>, passionate about building high-performance systems, distributed infrastructure, and AI-driven solutions. I enjoy designing and contributing to complex features that make products more robust and scalable.
 							</p>
 						</div>
 					</section>
@@ -111,10 +110,10 @@ export default function Home() {
 
 					<section
 						id="projects"
+
+						className="min-h-screen flex flex-col justify-center items-center text-center px-4 py-16 md:py-24"
 					>
-						<h2 className="text-lg font-mono mb-4 border-b border-pipboyGreen w-fit ml-4 pt-24 -mt-24">
-							Projects
-						</h2>
+						<h2 className="pipboy-flicker text-4xl mb-4 pb-8">Projects</h2>
 						<section className="bg-panelBg/80 backdrop-blur-sm p-6">
 
 							<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -151,9 +150,9 @@ export default function Home() {
 							</div>
 						</section >
 					</section>
-
-
+					<p className="text-center">Curious about the background? Click one of the squares!</p>
 				</main >
+
 				<section
 					id="contact"
 					className="min-h-screen flex flex-col justify-center items-center text-center px-4 py-16 md:py-24"
@@ -189,71 +188,6 @@ export default function Home() {
 					<div className="mb-4 md:mb-0 text-pipboyGreen font-mono">
 						© {new Date().getFullYear()} Francois Coleongco
 					</div>
-
-<<<<<<< HEAD
-			</main >
-			<section
-				id="contact"
-				className="min-h-screen flex flex-col justify-center items-center text-center px-4"
-			>
-				<h2 className="pipboy-flicker text-4xl mb-4">CONTACT</h2>
-				<p className="text-[var(--text-green)] mb-6">
-					Want to get in touch? Shoot me an email or connect on LinkedIn.
-				</p>
-				<div className="flex flex-col md:flex-row gap-4">
-					<a
-						href="mailto:christien.coleongco@gmail.com"
-						className="project-panel p-4 border border-[var(--highlight-green)] rounded-lg text-[var(--text-green)] hover:text-[var(--pipboy-foreground)] flicker-in transition text-center"
-					>
-						Email Me
-					</a>
-					<a
-						href="https://linkedin.com/in/francois-coleongco"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="project-panel p-4 border border-[var(--highlight-green)] rounded-lg text-[var(--text-green)] hover:text-[var(--pipboy-foreground)] flicker-in transition text-center"
-					>
-						LinkedIn
-					</a>
-				</div>
-			</section>
-
-			<p className="text-center">We&apos;re all void pointers 💚</p>
-			<br />
-
-
-			<footer className="bg-panelBg/90 scanline border-t-2 border-pipboyGreen py-6 px-6 flex flex-col md:flex-row justify-between items-center text-sm mt-0">
-				{/* Left: copyright or name */}
-				<div className="mb-4 md:mb-0 text-pipboyGreen font-mono">
-					© {new Date().getFullYear()} Francois Coleongco
-				</div>
-
-				{/* Right: links */}
-				<div className="flex gap-6">
-					<Link
-						href="https://github.com/Francois-Coleongco"
-						target="_blank"
-						className="flex items-center gap-1 text-pipboyGreen hover:text-white"
-					>
-						<FaGithub /> GitHub
-					</Link>
-					<Link
-						href="https://www.linkedin.com/in/francois-coleongco"
-						target="_blank"
-						className="flex items-center gap-1 text-pipboyGreen hover:text-white"
-					>
-						<FaLinkedin /> LinkedIn
-					</Link>
-					<a
-						href="mailto:christien.coleongco@gmail.com"
-						className="flex items-center gap-1 text-pipboyGreen hover:text-white"
-					>
-						<FaEnvelope /> Email
-					</a>
-				</div>
-			</footer>
-		</div >
-=======
 					{/* Right: links */}
 					<div className="flex gap-6">
 						<Link
@@ -280,6 +214,5 @@ export default function Home() {
 				</footer>
 			</div >
 		</>
->>>>>>> eee681e (looking better)
 	);
 }

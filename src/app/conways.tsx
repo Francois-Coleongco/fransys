@@ -4,6 +4,12 @@ import React, { useEffect, useRef } from 'react';
 const ConwayCanvas: React.FC = () => {
 	const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
+	const gridRef = useRef<number[][]>([]);
+
+	const [tooltip, setTooltip] = React.useState<{ x: number; y: number; message: string } | null>();
+
+	const cellSize = 12;
+
 	useEffect(() => {
 		const canvas = canvasRef.current;
 		if (!canvas) return;
@@ -13,7 +19,6 @@ const ConwayCanvas: React.FC = () => {
 		let width = (canvas.width = document.documentElement.scrollWidth);
 		let height = (canvas.height = document.documentElement.scrollHeight);
 
-		const cellSize = 12;
 		let cols = Math.floor(width / cellSize);
 		let rows = Math.floor(height / cellSize);
 
@@ -21,6 +26,7 @@ const ConwayCanvas: React.FC = () => {
 			new Array(rows).fill(0).map(() => (Math.random() > 0.25 ? 1 : 0))
 		);
 
+		gridRef.current = grid;
 		function drawGrid() {
 			if (ctx === null) return;
 			ctx.clearRect(0, 0, width, height);
@@ -63,6 +69,7 @@ const ConwayCanvas: React.FC = () => {
 				}
 			}
 
+			gridRef.current = next;
 			grid = next;
 		}
 
@@ -92,21 +99,62 @@ const ConwayCanvas: React.FC = () => {
 		};
 	}, []);
 
+	const handleClick = (e: MouseEvent) => {
+		const rect = canvasRef.current!.getBoundingClientRect();
+		const x = Math.floor((e.clientX - rect.left) / cellSize);
+		const y = Math.floor((e.clientY - rect.top) / cellSize);
+		if (!gridRef.current[x]) {
+			return
+		}
+
+		if (gridRef.current[x][y] == 1) {
+			console.log("this was a conways")
+			setTooltip({ x, y, message: " is a zero-player game. it is a cellular automaton where cells evolve based on simple rules without further input" })
+		}
+
+	}
+
 	return (
-		<canvas
-			ref={canvasRef}
-			style={{
-				position: 'fixed',
-				top: 0,
-				left: 0,
-				zIndex: -10,
-				width: '100%',
-				height: '100%',
-				opacity: 0.25,
-				pointerEvents: 'none',
-				imageRendering: 'pixelated',
-			}}
-		/>
+		<>
+			{tooltip && (
+				<div
+					style={{
+						position: "absolute",
+						left: tooltip.x * cellSize,
+						top: tooltip.y * cellSize,
+						background: "rgba(23, 23, 23, 0.9)",
+						color: "#8fc13e",
+						fontFamily: "monospace",
+						padding: "8px 10px",
+						borderRadius: "8px",
+						fontSize: "0.8rem",
+						zIndex: 1000,
+						opacity: 1,
+						transition: "opacity 0.3s ease",
+						maxWidth: "220px"
+					}} onClick={() => setTooltip(null)}
+				>
+					<a href='https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life' className='underline'>conways game of life</a> {tooltip.message}
+					<br />
+					<br />
+					<p className="text-xs text-pipboyGreen opacity-50">(click again to close me)</p>
+				</div>
+			)}
+			<canvas
+				ref={canvasRef}
+				onClick={(e) => handleClick(e as unknown as MouseEvent)}
+				style={{
+					position: 'fixed',
+					top: 0,
+					left: 0,
+					width: '100%',
+					height: '100%',
+					opacity: 0.25,
+					imageRendering: 'pixelated',
+				}}
+			/>
+		</>
+
 	);
 };
 
