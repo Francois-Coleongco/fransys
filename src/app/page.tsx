@@ -65,12 +65,12 @@ export default function Home() {
 
 				<nav className="opacity-75 border-b border-[var(--highlight-green)] px-6 py-3 flex justify-between items-center">
 
-					<a href="" className="text-[var(--pipboy-foreground)] font-mono text-xl tracking-widest flicker-in transform transition-transform duration-200 hover:scale-104">
+					<a href="" className="text-[var(--pipboy-foreground)] font-mono text-xl tracking-widest flicker-in transform transition-transform duration-200 hover:scale-104" style={{ position: 'relative', zIndex: 1 }}>
 						Francois Coleongco
 					</a>
 					<div className="hidden md:flex space-x-6 font-mono text-[var(--text-green)]">
-						<Link href="#projects" className="hover:text-[var(--pipboy-foreground)] transform transition-transform duration-200 hover:scale-104">Projects</Link>
-						<Link href="#contact" className="hover:text-[var(--pipboy-foreground)] transform transition-transform duration-200 hover:scale-104">Contact</Link>
+						<Link href="#projects" className="hover:text-[var(--pipboy-foreground)] transform transition-transform duration-200 hover:scale-104" style={{ position: 'relative', zIndex: 1 }}>Projects</Link>
+						<Link href="#contact" className="hover:text-[var(--pipboy-foreground)] transform transition-transform duration-200 hover:scale-104" style={{ position: 'relative', zIndex: 1 }}>Contact</Link>
 					</div>
 
 					<div className={`md:hidden flex flex-col gap-4 mt-2 ${menuOpen ? "flex" : "hidden"}`}>
