@@ -8,6 +8,7 @@ import ConwayCanvas from "./conways";
 import { TbLoadBalancer } from "react-icons/tb";
 import { MdHttp } from "react-icons/md";
 import { useEffect, useState } from "react";
+import { DiRedis } from "react-icons/di";
 
 
 const projects = [
@@ -27,7 +28,7 @@ const projects = [
 		name: "HTTP Load Balancer",
 		description: "A hybrid scheduling HTTP load balancer",
 		link: "https://github.com/Francois-Coleongco/LoadBalancer",
-		icons: [SiGo, TbLoadBalancer, MdHttp],
+		icons: [SiGo, TbLoadBalancer, MdHttp, DiRedis],
 	},
 	{
 		name: "Encrypted Steganography Suite",
@@ -160,7 +161,7 @@ export default function Home() {
 					</p>
 					<div className="flex flex-col md:flex-row gap-4">
 						<a
-							href="mailto:christien.coleongco@gmail.com"
+							href="mailto:francois.coleongco@gmail.com"
 							className="project-panel p-4 border border-[var(--highlight-green)] rounded-lg text-[var(--text-green)] hover:text-[var(--pipboy-foreground)] flicker-in transition text-center transform transition-transform duration-200 hover:scale-104"
 							style={{ position: 'relative', zIndex: 1 }}
 						>
@@ -205,7 +206,7 @@ export default function Home() {
 							<FaLinkedin /> LinkedIn
 						</Link>
 						<Link
-							href="mailto:christien.coleongco@gmail.com"
+							href="mailto:francois.coleongco@gmail.com"
 							className="flex items-center gap-1 text-pipboyGreen hover:text-white transform transition-transform duration-200 hover:scale-104"
 							style={{ position: 'relative', zIndex: 1 }}
 						>
