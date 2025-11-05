@@ -1,6 +1,6 @@
 "use client"
 import { FaGithub, FaRust, FaServer, FaLinkedin, FaEnvelope, FaNetworkWired, FaShieldAlt } from "react-icons/fa";
-import { SiGo, SiCplusplus, SiSqlite, SiCmake, SiTauri, SiJavascript, SiReact, SiElasticsearch, SiNodedotjs, SiPython, SiOllama, SiOpenai, SiFastapi } from "react-icons/si";
+import { SiGo, SiCplusplus, SiSqlite, SiCmake, SiTauri, SiJavascript, SiReact, SiElasticsearch, SiNodedotjs, SiPython, SiOllama, SiOpenai, SiFastapi, SiTailscale, SiGnubash } from "react-icons/si";
 import "./globals.css";
 import Link from "next/link";
 import { FaImage, FaLock } from "react-icons/fa6";
@@ -12,12 +12,6 @@ import { DiRedis } from "react-icons/di";
 
 
 const projects = [
-	{
-		name: "Distributed Threat Detection System",
-		description: "A distributed threat detection framework",
-		link: "https://github.com/Francois-Coleongco/SATD",
-		icons: [SiGo, FaNetworkWired, SiElasticsearch, SiNodedotjs, FaShieldAlt],
-	},
 	{
 		name: "Multithreaded Encrypted File Server/Client",
 		description: "A terminal-based file storage server and client",
@@ -32,21 +26,27 @@ const projects = [
 	},
 	{
 		name: "Encrypted Steganography Suite",
-		description: "Secret message encoding in PNG files",
+		description: "A GUI tool to encode encrypted messages in PNG files",
 		link: "https://github.com/Francois-Coleongco/Steganography_Suite",
 		icons: [FaRust, FaLock, FaImage, SiTauri, SiJavascript, SiReact],
 	},
 	{
 		name: "Speech-Driven AI Video Preprocessor",
-		description: "AI-powered video trimming for the lazy video editor",
+		description: "AI-powered video preprocessing for the lazy video editor",
 		link: "https://github.com/Francois-Coleongco/KeepItRolling",
-		icons: [SiPython, SiOllama, SiOpenai, SiFastapi],
+		icons: [SiPython, SiOllama, SiOpenai, SiFastapi, SiReact],
+	},
+	{
+		name: "Distributed Threat Detection System",
+		description: "A distributed threat detection framework",
+		link: "https://github.com/Francois-Coleongco/SATD",
+		icons: [SiGo, FaNetworkWired, SiElasticsearch, SiNodedotjs, FaShieldAlt],
 	},
 	{
 		name: "Network Encryption Interface",
 		description: "C++ systems programming & encryption interface",
 		link: "https://github.com/Francois-Coleongco/Network-Encryption-Interface",
-		icons: [SiCplusplus, FaLock, FaNetworkWired],
+		icons: [SiCplusplus, FaLock, FaNetworkWired, SiTailscale, SiGnubash],
 	},
 
 ];
